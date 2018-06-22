@@ -6,11 +6,12 @@ namespace UnityEngine.XR.iOS {
     public class UnityARHitTestExample : MonoBehaviour {
 
         public Camera cam;
+        GameObject monster;
 
         void Update() {
             if (Input.touchCount > 0 && cam != null) {
                 //CreatePrimitiveで動的にGameObjectであるCubeを生成する
-                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 //Cubeに適用するランダムな色を生成する
                 Material material = new Material(Shader.Find("Diffuse")) {
                     color = new Color(Random.value, Random.value, Random.value)
