@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/UnityARKitPlugin/Examples/UnityARKitScene/UnityARKitScene.unity
     guid: c159f2591a9b5c843b0a0442451f78f8
-  - enabled: 1
-    path: Assets/UnityARKitPlugin/Examples/UnityARKitScene/UnityARKitScene 2.unity
-    guid: 905f7732ec6ba49ea84ade86123d6895
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/UnityParticlePainter/UnityParticlePainter.unity
     guid: 0327f0aa0142146c291df8203b848257

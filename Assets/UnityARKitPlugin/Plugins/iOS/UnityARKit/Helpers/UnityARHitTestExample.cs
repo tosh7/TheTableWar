@@ -113,4 +113,3 @@ namespace UnityEngine.XR.iOS
 
     }
 }
-
