@@ -13,28 +13,30 @@ namespace UnityEngine.XR.iOS
         {
             if (Input.touchCount > 0 && cam != null)
             {
-                // //CreatePrimitiveで動的にGameObjectであるCubeを生成する
+                //CreatePrimitiveで動的にGameObjectであるCubeを生成する
                 // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                // //Cubeに適用するランダムな色を生成する
+                GameObject cube = Instantiate(monster);
+                //Cubeに適用するランダムな色を生成する
                 // Material material = new Material(Shader.Find("Diffuse"))
                 // {
                 //     color = new Color(Random.value, Random.value, Random.value)
                 // };
-                // //ランダムに変化する色をCubeに適用する
+                //ランダムに変化する色をCubeに適用する
                 // cube.GetComponent<Renderer>().material = material;
-                // //Android端末をタップして、ランダムな色のCubeを認識した平面上に投げ出すように追加していく
-                // //Cubeの大きさも0.2fとして指定している
-                // cube.transform.position = cam.transform.TransformPoint(0, 0, 0.5f);
-                // cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                // //CubeにはRigidbodyを持たせて重力を与えておかないと、床の上には配置されないので注意が必要。Rigidbodyで重力を持たせないとCubeは宙に浮いた状態になる
-                // cube.AddComponent<Rigidbody>();
-                // cube.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 1f, 2f), ForceMode.Impulse);
+                //Android端末をタップして、ランダムな色のCubeを認識した平面上に投げ出すように追加していく
+                //Cubeの大きさも0.2fとして指定している
+                cube.transform.position = cam.transform.TransformPoint(0, 0, 0.5f);
+                cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                //CubeにはRigidbodyを持たせて重力を与えておかないと、床の上には配置されないので注意が必要。Rigidbodyで重力を持たせないとCubeは宙に浮いた状態になる
+                cube.AddComponent<Rigidbody>();
+                cube.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 1f, 2f), ForceMode.Impulse);
 
-				monster.transform.position = cam.transform.TransformPoint(0, 0, 0.5f);
-				monster.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+				
+				// monster.transform.position = cam.transform.TransformPoint(0, 0, 0.5f);
+				// monster.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
 
-				monster.AddComponent<Rigidbody>();
-				monster.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 1f, 2f), ForceMode.Impulse);
+				// monster.AddComponent<Rigidbody>();
+				// monster.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 1f, 2f), ForceMode.Impulse);
             }
         }
         // public Transform m_HitTransform;
