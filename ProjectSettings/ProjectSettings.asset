@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 902090c1ff12248f19ac06d9759756bb
+  productGUID: 8eb2f1a3bf0e14641afa553c06527927
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -748,7 +748,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 28122d79-359f-4634-bd4a-c29c5f705149
-  projectName: TheTableWar
+  projectName: 
   organizationId: tosh3
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
