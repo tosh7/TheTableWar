@@ -748,7 +748,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 28122d79-359f-4634-bd4a-c29c5f705149
-  projectName: 
+  projectName: TheTableWar
   organizationId: tosh3
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
