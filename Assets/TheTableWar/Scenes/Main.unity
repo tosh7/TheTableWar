@@ -346,7 +346,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4604900103119438, guid: 12f09ec50323d4c59a4acb282219f830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.74
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4604900103119438, guid: 12f09ec50323d4c59a4acb282219f830, type: 2}
       propertyPath: m_LocalPosition.z
@@ -919,13 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147c4721818d3475285994f255bb3700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 0
-  m_HitTransform: {fileID: 4604900103119438, guid: 12f09ec50323d4c59a4acb282219f830,
-    type: 2}
-  maxRayDistance: 30
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 1024
+  floor: {fileID: 1178554530407674, guid: 12f09ec50323d4c59a4acb282219f830, type: 2}
 --- !u!4 &1433986610
 Transform:
   m_ObjectHideFlags: 0
