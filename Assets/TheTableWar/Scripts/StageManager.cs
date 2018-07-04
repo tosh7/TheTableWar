@@ -7,11 +7,12 @@ namespace UnityEngine.XR.iOS {
         public float maxRayDistance = 30.0f;
         public LayerMask collisionLayer = 1 << 10; //ARKitPlane layer
         public GameObject ruinedHouse; //配列の入れ物
+        public GameObject monsterA;
         public int num = 0;
 
-        void CreateObj (Vector3 atPosition) {
-            GameObject floor = Instantiate (ruinedHouse, atPosition, Quaternion.identity);
-            floor.transform.LookAt (ruinedHouse.transform);
+        void CreateObj (Vector3 atPosition, GameObject obj) {
+            GameObject floor = Instantiate (obj, atPosition, Quaternion.identity);
+            floor.transform.LookAt (obj.transform);
             floor.transform.rotation = Quaternion.Euler (0.0f, floor.transform.rotation.eulerAngles.y, floor.transform.rotation.z);
         }
 
@@ -32,7 +33,8 @@ namespace UnityEngine.XR.iOS {
                             Vector3 position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
 
                             if (num == 0) {
-                                CreateObj (new Vector3 (position.x, position.y, position.z));
+                                CreateObj (new Vector3 (position.x, position.y, position.z), ruinedHouse);
+                                CreateObj (new Vector3 (position.x, position.y, position.z), monsterA);
                                 num++;
                             }
                             break;

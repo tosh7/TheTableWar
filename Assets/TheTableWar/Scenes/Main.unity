@@ -880,6 +880,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   ruinedHouse: {fileID: 170474, guid: 770a7a5a93eb9f24cbb20fc429fe10af, type: 2}
+  monsterA: {fileID: 1237513207122726, guid: df39cffcf27df4da093e03f6a17d7fe4, type: 2}
   num: 0
 --- !u!4 &1433986610
 Transform:
