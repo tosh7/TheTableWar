@@ -871,14 +871,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1433986608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e520e723830474be2a409f3aa0eb7057, type: 3}
+  m_Script: {fileID: 11500000, guid: 147c4721818d3475285994f255bb3700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HitTransform: {fileID: 0}
+  m_HitTransform: {fileID: 1286139108}
   maxRayDistance: 30
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
+  ruinedHouse: {fileID: 170474, guid: 770a7a5a93eb9f24cbb20fc429fe10af, type: 2}
+  num: 0
 --- !u!4 &1433986610
 Transform:
   m_ObjectHideFlags: 0
