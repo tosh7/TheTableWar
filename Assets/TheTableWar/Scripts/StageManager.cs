@@ -44,9 +44,9 @@ namespace UnityEngine.XR.iOS {
             }
         }
 
-        public void DestoryObject() {
+        public void DestoryObject(GameObject enemy) {
             Debug.Log("succece with getting comnponent");
-            // Destroy(enemy);
+            Destroy(enemy);
         }
     }
 }

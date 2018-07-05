@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour {
 		if(Physics.Raycast(ray, out hitInfo, distance)) {
 			Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
 			Debug.Log("ok" + hitInfo.collider.name);
-			stageManager.GetComponent<UnityEngine.XR.iOS.StageManager>().DestoryObject();
+			stageManager.GetComponent<UnityEngine.XR.iOS.StageManager>().DestoryObject(hitInfo.collider.gameObject);
 		}
 	}
 }
