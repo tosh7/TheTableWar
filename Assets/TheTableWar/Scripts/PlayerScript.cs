@@ -14,10 +14,10 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		shot();
+		// shot();
 	}
 
-	void shot() {
+	public void shot() {
 		int distance = 10;
 		Vector3 center = new Vector3(Screen.width/2, Screen.height/2, 0);
 		Ray ray = camera.ScreenPointToRay(center);
