@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 	public Camera camera;
+	public GameObject stageManager;
+	public PlayerScript ps;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,7 @@ public class PlayerScript : MonoBehaviour {
 		if(Physics.Raycast(ray, out hitInfo, distance)) {
 			Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
 			Debug.Log("ok" + hitInfo.collider.name);
+			stageManager.GetComponent<UnityEngine.XR.iOS.StageManager>().DestoryObject();
 		}
 	}
 }
