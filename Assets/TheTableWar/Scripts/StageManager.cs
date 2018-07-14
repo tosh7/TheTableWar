@@ -27,6 +27,7 @@ namespace UnityEngine.XR.iOS {
 
         public int num = 0;
 
+        //指定した場所にオブジェクトを生成
         void CreateObj (Vector3 atPosition, GameObject obj) {
             GameObject floor = Instantiate (obj, atPosition, Quaternion.identity);
             floor.transform.LookAt (obj.transform);
@@ -64,8 +65,7 @@ namespace UnityEngine.XR.iOS {
         }
 
         public void DestoryObject (GameObject enemy) {
-            Debug.Log ("succece with getting comnponent");
-            if (enemy == monsterA) {
+            if (enemy.tag == "enemy") {
                 hitCount++;
                 combo++;
                 if (combo >= 2) {
