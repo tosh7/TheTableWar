@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log("here");
+		// Debug.Log("here");
 	}
 	
 	// Update is called once per frame
@@ -24,8 +24,8 @@ public class PlayerScript : MonoBehaviour {
 		RaycastHit hitInfo;
 
 		if(Physics.Raycast(ray, out hitInfo, distance)) {
-			Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
-			Debug.Log("ok" + hitInfo.collider.name);
+			// Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
+			// Debug.Log("ok" + hitInfo.collider.name);
 			stageManager.GetComponent<UnityEngine.XR.iOS.StageManager>().DestoryObject(hitInfo.collider.gameObject);
 		}
 	}
