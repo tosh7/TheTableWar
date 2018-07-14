@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
     public void Shot () {
         Debug.Log("Bang!");
 
-        if (stageManager.seconds <= 10.0f && stageManager.seconds >= 0.0f) {
+        if (stageManager.timer <= stageManager.seconds && stageManager.timer >= 0.0f) {
             int distance = 10;
             Vector3 center = new Vector3 (Screen.width / 2, Screen.height / 2, 0);
             Ray ray = camera.ScreenPointToRay (center);

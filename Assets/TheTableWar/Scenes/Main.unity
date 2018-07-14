@@ -1603,7 +1603,7 @@ MonoBehaviour:
   accuracyText: {fileID: 1067320862}
   messageText: {fileID: 1015612796}
   comboText: {fileID: 48540356}
-  seconds: 11.5
+  seconds: 31.5
   num: 0
 --- !u!4 &1433986610
 Transform:
@@ -1954,7 +1954,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10.0
+  m_Text: 30.0
 --- !u!222 &1908271331
 CanvasRenderer:
   m_ObjectHideFlags: 0

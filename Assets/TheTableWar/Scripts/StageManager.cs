@@ -16,7 +16,8 @@ namespace UnityEngine.XR.iOS {
         // タイマーとスコア、コンボ
         private int score = 0;
         public static int finalScore = 0;
-        public float seconds = 11.5f;
+        public float seconds = 30f;
+        public float timer;
         private int combo = 0;
         // 敵1体あたりの点数
         private int point = 100;
@@ -27,6 +28,10 @@ namespace UnityEngine.XR.iOS {
 
         public int num = 0;
 
+
+        public void Start(){
+            timer = seconds + 1.5f;
+        }
         //指定した場所にオブジェクトを生成
         void CreateObj (Vector3 atPosition, GameObject obj) {
             GameObject floor = Instantiate (obj, atPosition, Quaternion.identity);
@@ -36,7 +41,7 @@ namespace UnityEngine.XR.iOS {
 
         void Update () {
             if (num != 0) Game ();
-            //Game();
+
             if (Input.touchCount > 0 && m_HitTransform != null) {
                 var touch = Input.GetTouch (0);
                 if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved) {
@@ -65,7 +70,9 @@ namespace UnityEngine.XR.iOS {
         }
 
         public void DestoryObject (GameObject enemy) {
+            Debug.Log ("Successed to get a component");
             if (enemy.tag == "enemy") {
+                Debug.Log ("if this works, it will be destoroyed");
                 hitCount++;
                 combo++;
                 if (combo >= 2) {
@@ -82,18 +89,18 @@ namespace UnityEngine.XR.iOS {
         }
 
         void Game () {
-            if (seconds > -1.6f) seconds -= Time.deltaTime;
-            if (seconds > 10.0f && seconds <= 11.5f) messageText.text = "START!";
-            if (seconds > 0.0f && seconds <= 10.0f) {
+            if (timer > -1.6f) timer -= Time.deltaTime;
+            if (timer > seconds && timer <= seconds + 1.5) messageText.text = "START!";
+            if (timer > 0.0f && timer <= seconds) {
                 messageText.text = "";
-                timerText.text = seconds.ToString ("F1");
+                timerText.text = timer.ToString ("F1");
                 accuracy = (float) (hitCount / playerScript.shotCount);
                 accuracyMessage = (accuracy * 100.0).ToString ("F2") + " %";
                 if (accuracy <= 1.0f) accuracyText.text = accuracyMessage;
                 finalScore = CalcFinalScore (score, accuracy);
             }
-            if (seconds > -1.5f && seconds <= 0.0f) messageText.text = "FINISH!";
-            if (seconds <= -1.5f) SceneManager.LoadScene ("Score");
+            if (timer > -1.5f && timer <= 0.0f) messageText.text = "FINISH!";
+            if (timer <= -1.5f) SceneManager.LoadScene ("Score");
         }
 
         // 敵の種類によるポイントとコンボを掛け合わせてスコア加算
