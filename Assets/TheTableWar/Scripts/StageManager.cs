@@ -41,6 +41,7 @@ namespace UnityEngine.XR.iOS {
 
         void Update () {
             if (num != 0) Game ();
+           //テスト用 Game();
 
             if (Input.touchCount > 0 && m_HitTransform != null) {
                 var touch = Input.GetTouch (0);
