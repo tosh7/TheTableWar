@@ -884,7 +884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &935339621
 Prefab:
   m_ObjectHideFlags: 0
@@ -894,31 +894,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.07432051
+      value: 0.08241871
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.032026697
+      value: -0.032973506
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.17033762
+      value: 0.12807985
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.4471163
+      value: -0.46636575
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.53740025
+      value: -0.5531257
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.55225885
+      value: -0.5361024
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.45420066
+      value: 0.43491295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_RootOrder
@@ -934,15 +934,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -88.66601
+      value: -87.102005
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -114.913
+      value: -258.818
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 14.1050005
+      value: 158.03001
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a50d1089fe10be54685fc3ea20920fbd, type: 2}
       propertyPath: m_LocalScale.x
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   accuracyText: {fileID: 1067320862}
   messageText: {fileID: 1015612796}
   comboText: {fileID: 48540356}
-  seconds: 11.5
+  seconds: 31.5
   num: 0
 --- !u!4 &1433986610
 Transform:
@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1835,7 +1835,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 10}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1954,7 +1954,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10.0
+  m_Text: 30.0
 --- !u!222 &1908271331
 CanvasRenderer:
   m_ObjectHideFlags: 0
