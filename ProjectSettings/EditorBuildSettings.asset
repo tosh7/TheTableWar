@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TheTableWar/Scenes/Main.unity
+    guid: 90f21e2841e7245f5a120d3929fd4d5c
+  - enabled: 1
+    path: Assets/TheTableWar/Scenes/Score.unity
+    guid: 5e740cb732317c9409d2a6c81ff93e21
   m_configObjects: {}

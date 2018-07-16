@@ -9,9 +9,11 @@ public class PlayerScript : MonoBehaviour {
     public PlayerScript playerScript;
     // Shotボタンを押した回数
     public int shotCount = 0;
+    public AudioSource gunSound;
 
     public void Shot () {
         Debug.Log("Bang!");
+        gunSound.Play();
 
         if (stageManager.timer <= stageManager.seconds && stageManager.timer >= 0.0f) {
             int distance = 10;
