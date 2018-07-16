@@ -27,6 +27,7 @@ namespace UnityEngine.XR.iOS {
         private float accuracy;
 
         public int num = 0;
+        public GameObject bomb;
 
 
         public void Start(){
@@ -60,6 +61,9 @@ namespace UnityEngine.XR.iOS {
                             if (num == 0) {
                                 CreateObj (new Vector3 (position.x, position.y, position.z), ruinedHouse);
                                 CreateObj (new Vector3 (position.x, position.y, position.z), monsterA);
+                                CreateObj (new Vector3 (position.x + 0.3f, position.y, position.z), monsterA);
+                                CreateObj (new Vector3 (position.x + 0.1f, position.y, position.z + 0.8f), monsterA);
+                                CreateObj (new Vector3 (position.x, position.y + 0.2f, position.z), monsterA);
                                 num++;
                             }
                             break;
@@ -82,6 +86,9 @@ namespace UnityEngine.XR.iOS {
                     comboText.text = "";
                 }
                 AddPoint (point, combo);
+                if(bomb){
+                    Instantiate(bomb, transform.position, transform.rotation);
+                }
                 Destroy (enemy);
             } else {
                 combo = 0;
