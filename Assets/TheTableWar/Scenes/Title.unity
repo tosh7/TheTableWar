@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 1018194}
   - component: {fileID: 1018195}
   m_Layer: 0
-  m_Name: Ranking_21
+  m_Name: Ranking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: fe4eb0bb39da3ea43956e39b240f52bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3bd89eaf181bac4b8c1651fff3d1d7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 302750412}
   - component: {fileID: 302750411}
   m_Layer: 0
-  m_Name: background01
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 1693530068}
   - component: {fileID: 1693530067}
   m_Layer: 0
-  m_Name: Title_11
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1773340415}
   - component: {fileID: 1773340416}
   m_Layer: 0
-  m_Name: START_11
+  m_Name: START
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
