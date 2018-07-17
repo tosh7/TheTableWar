@@ -40,8 +40,8 @@ namespace UnityEngine.XR.iOS {
         }
 
         void Update () {
-            if (num != 0) Game ();
-           //テスト用 Game();
+          //  if (num != 0) Game ();
+            Game();
 
             if (Input.touchCount > 0 && m_HitTransform != null) {
                 var touch = Input.GetTouch (0);
@@ -87,10 +87,10 @@ namespace UnityEngine.XR.iOS {
 
         void Game () {
             if (timer > -1.6f) timer -= Time.deltaTime;
-            if (timer > seconds && timer <= seconds + 1.5) messageText.text = "START!";
+            if (timer > seconds) messageText.text = "START!";
             if (timer > 0.0f && timer <= seconds) {
                 messageText.text = "";
-                timerText.text = timer.ToString ("F1");
+                timerText.text = (timer-1.5f).ToString ("F1");
                 if (combo >= 2)
                 {
                     comboMessage = combo.ToString() + " combo";
