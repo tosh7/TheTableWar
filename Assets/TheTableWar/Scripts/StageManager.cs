@@ -16,7 +16,7 @@ namespace UnityEngine.XR.iOS {
         // タイマーとスコア、コンボ
         private int score = 0;
         public static int finalScore = 0;
-        public float seconds = 30f;
+        public float seconds = 30.0f;
         public float timer;
         private int combo = 0;
         // 敵1体あたりの点数
@@ -42,6 +42,7 @@ namespace UnityEngine.XR.iOS {
 
         void Update () {
             if (num != 0) Game ();
+           // Game();
 
             if (Input.touchCount > 0 && m_HitTransform != null) {
                 var touch = Input.GetTouch (0);
@@ -79,31 +80,37 @@ namespace UnityEngine.XR.iOS {
                 Debug.Log ("if this works, it will be destoroyed");
                 hitCount++;
                 combo++;
-                if (combo >= 2) {
-                    comboMessage = combo.ToString () + " combo";
-                    comboText.text = comboMessage;
-                } else {
-                    comboText.text = "";
-                }
                 AddPoint (point, combo);
                 if(bomb){
                     Instantiate(bomb, enemy.transform.position, enemy.transform.rotation);
                 }
                 Destroy (enemy);
-            } else {
+            }
+            else
+            {
                 combo = 0;
             }
         }
 
         void Game () {
             if (timer > -1.6f) timer -= Time.deltaTime;
-            if (timer > seconds && timer <= seconds + 1.5) messageText.text = "START!";
+            if (timer > seconds) messageText.text = "START!";
             if (timer > 0.0f && timer <= seconds) {
                 messageText.text = "";
                 timerText.text = timer.ToString ("F1");
+                if (combo >= 2)
+                {
+                    comboMessage = combo.ToString() + " combo";
+                    comboText.text = comboMessage;
+                }
+                else
+                {
+                    comboText.text = "";
+                }
                 accuracy = (float) (hitCount / playerScript.shotCount);
-                accuracyMessage = (accuracy * 100.0).ToString ("F2") + " %";
-                if (accuracy <= 1.0f) accuracyText.text = accuracyMessage;
+                //accuracyMessage = (accuracy * 100.0).ToString ("F2") + " %";
+                //if (accuracy <= 1.0f) accuracyText.text = accuracyMessage;
+                accuracyText.text = (accuracy * 100.0f).ToString("F2") + " %";
                 finalScore = CalcFinalScore (score, accuracy);
             }
             if (timer > -1.5f && timer <= 0.0f) messageText.text = "FINISH!";
