@@ -16,7 +16,7 @@ namespace UnityEngine.XR.iOS {
         // タイマーとスコア、コンボ
         private int score = 0;
         public static int finalScore = 0;
-        public float seconds = 30f;
+        public float seconds = 30.0f;
         public float timer;
         private int combo = 0;
         // 敵1体あたりの点数
@@ -40,8 +40,8 @@ namespace UnityEngine.XR.iOS {
         }
 
         void Update () {
-            if (num != 0) Game ();
-           // Game();
+           // if (num != 0) Game ();
+            Game();
 
             if (Input.touchCount > 0 && m_HitTransform != null) {
                 var touch = Input.GetTouch (0);
@@ -90,7 +90,7 @@ namespace UnityEngine.XR.iOS {
             if (timer > seconds) messageText.text = "START!";
             if (timer > 0.0f && timer <= seconds) {
                 messageText.text = "";
-                timerText.text = (timer-1.5f).ToString ("F1");
+                timerText.text = timer.ToString ("F1");
                 if (combo >= 2)
                 {
                     comboMessage = combo.ToString() + " combo";

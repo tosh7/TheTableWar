@@ -1603,7 +1603,8 @@ MonoBehaviour:
   accuracyText: {fileID: 1067320862}
   messageText: {fileID: 1015612796}
   comboText: {fileID: 48540356}
-  seconds: 31.5
+  seconds: 30
+  timer: 0
   num: 0
 --- !u!4 &1433986610
 Transform:
