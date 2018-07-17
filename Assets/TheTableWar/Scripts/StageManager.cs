@@ -87,7 +87,7 @@ namespace UnityEngine.XR.iOS {
                 }
                 AddPoint (point, combo);
                 if(bomb){
-                    Instantiate(bomb, transform.position, transform.rotation);
+                    Instantiate(bomb, enemy.transform.position, enemy.transform.rotation);
                 }
                 Destroy (enemy);
             } else {
