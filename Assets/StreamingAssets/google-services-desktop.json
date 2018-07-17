@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 0
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "132713750964-b4d9hkgp40iggvaos82rl9a4smp9fve5.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMlxO5iWcdNGpCVxFQIsXDTA_E9DPQzfw"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:132713750964:ios:013adc83dc04cfab", 
+        "android_client_info": {
+          "package_name": "com.tosh7.thetablewar"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "thetablewar-14053.appspot.com", 
+    "project_id": "thetablewar-14053", 
+    "firebase_url": "https://thetablewar-14053.firebaseio.com", 
+    "project_number": "132713750964"
+  }
+}
