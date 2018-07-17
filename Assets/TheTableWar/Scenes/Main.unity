@@ -1700,7 +1700,7 @@ MonoBehaviour:
   accuracyText: {fileID: 1067320862}
   messageText: {fileID: 1015612796}
   comboText: {fileID: 48540356}
-  seconds: 31.5
+  seconds: 30
   timer: 0
   num: 0
   bomb: {fileID: 100004, guid: 82019e923dca94848916b96b8f98a352, type: 2}

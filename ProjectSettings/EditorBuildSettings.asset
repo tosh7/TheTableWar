@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TheTableWar/Scenes/Title.unity
+    guid: 806bca86ddc407043b3f147456712e34
+  - enabled: 1
     path: Assets/TheTableWar/Scenes/Main.unity
     guid: 90f21e2841e7245f5a120d3929fd4d5c
   - enabled: 1
