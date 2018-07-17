@@ -76,15 +76,11 @@ namespace UnityEngine.XR.iOS {
                 Debug.Log ("if this works, it will be destoroyed");
                 hitCount++;
                 combo++;
-                if (combo >= 2) {
-                    comboMessage = combo.ToString () + " combo";
-                    comboText.text = comboMessage;
-                } else {
-                    comboText.text = "";
-                }
                 AddPoint (point, combo);
                 Destroy (enemy);
-            } else {
+            }
+            else
+            {
                 combo = 0;
             }
         }
@@ -95,9 +91,19 @@ namespace UnityEngine.XR.iOS {
             if (timer > 0.0f && timer <= seconds) {
                 messageText.text = "";
                 timerText.text = timer.ToString ("F1");
+                if (combo >= 2)
+                {
+                    comboMessage = combo.ToString() + " combo";
+                    comboText.text = comboMessage;
+                }
+                else
+                {
+                    comboText.text = "";
+                }
                 accuracy = (float) (hitCount / playerScript.shotCount);
-                accuracyMessage = (accuracy * 100.0).ToString ("F2") + " %";
-                if (accuracy <= 1.0f) accuracyText.text = accuracyMessage;
+                //accuracyMessage = (accuracy * 100.0).ToString ("F2") + " %";
+                //if (accuracy <= 1.0f) accuracyText.text = accuracyMessage;
+                accuracyText.text = (accuracy * 100.0f).ToString("F2") + " %";
                 finalScore = CalcFinalScore (score, accuracy);
             }
             if (timer > -1.5f && timer <= 0.0f) messageText.text = "FINISH!";
