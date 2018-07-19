@@ -559,6 +559,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1131873184}
+        m_MethodName: Register
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &530393934
@@ -742,6 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410a419215d8944cb8fc6336904873a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &1220079210
 GameObject:
   m_ObjectHideFlags: 0
