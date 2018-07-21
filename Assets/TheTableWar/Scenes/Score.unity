@@ -754,6 +754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 
+  textField: {fileID: 2123537594}
+  field: {fileID: 0}
 --- !u!1 &1220079210
 GameObject:
   m_ObjectHideFlags: 0
