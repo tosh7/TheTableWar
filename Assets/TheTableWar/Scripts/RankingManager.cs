@@ -15,6 +15,7 @@ public class RankingManager : MonoBehaviour {
 		Debug.Log("here");
 		//bossNoのノードからtimeで昇順ソートして最大10件を取る（非同期)
 		timeRankDB.Child(ToString()).OrderByChild ("time").LimitToFirst (10).GetValueAsync ().ContinueWith (task => {
+			Debug.Log("hey");
 			if (task.IsFaulted) { //取得失敗
 				//Handle the Error
 				Debug.Log("error");
@@ -32,7 +33,9 @@ public class RankingManager : MonoBehaviour {
 			// 		timeRank.SetText (rank + 1, name, getTimeStr (time)); //順位1位から
 			// 		rank++;
 					Debug.Log(name);
+					Debug.Log("helloooo");
 				}
+				// Debug.Log("hello");
 			}
 		});
 	}
