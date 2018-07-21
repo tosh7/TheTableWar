@@ -107,10 +107,10 @@ namespace UnityEngine.XR.iOS {
                 {
                     comboText.text = "";
                 }
-                accuracy = (float) (hitCount / playerScript.shotCount);
+                accuracy = hitCount * 100 / playerScript.shotCount;
                 //accuracyMessage = (accuracy * 100.0).ToString ("F2") + " %";
                 //if (accuracy <= 1.0f) accuracyText.text = accuracyMessage;
-                accuracyText.text = (accuracy * 100.0f).ToString("F2") + " %";
+                accuracyText.text = accuracy.ToString("F2") + " %";
                 finalScore = CalcFinalScore (score, accuracy);
             }
             if (timer > -1.5f && timer <= 0.0f) messageText.text = "FINISH!";
@@ -126,7 +126,7 @@ namespace UnityEngine.XR.iOS {
 
         // 射撃精度を掛け合わせて最終スコアを計算
         private int CalcFinalScore (int score, float accuracy) {
-            return (int) (score * accuracy);
+            return (int) (score * accuracy / 100);
         }
 
         // Scoreシーンで使用
