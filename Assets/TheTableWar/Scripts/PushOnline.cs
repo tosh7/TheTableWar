@@ -5,6 +5,7 @@ using Firebase.Database;
 using Firebase.Unity.Editor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.iOS;
 
 public class PushOnline : MonoBehaviour {
 
@@ -14,8 +15,10 @@ public class PushOnline : MonoBehaviour {
 	//１件データをさらにDictionaryに入れる。キーはノード(bossNo/さっき生成したキー)
 	Dictionary<string, object> map = new Dictionary<string, object> ();
 	public string key;
-	public InputField textField;
-	public GameObject field;
+	InputField textField;
+	public GameObject inputField;
+	string inputValue;
+	FinalScore fs;
 
 
 	// Use this for initialization
@@ -24,7 +27,8 @@ public class PushOnline : MonoBehaviour {
 		timeRankDB = FirebaseDatabase.DefaultInstance.GetReference ("time ranks");
 		//まずbossNoのノードにレコードを登録(Push)して、生成されたキーを取得（これを１件のノード名に使う）
 		key = timeRankDB.Child (ToString ()).Push ().Key;
-		textField = textField.GetComponent<InputField>();
+		textField = inputField.GetComponent<InputField>();
+		// Debug.Log("final score is " + StageManager.GetFinalScore());
 	}
 
 	// Update is called once per frame
@@ -33,18 +37,16 @@ public class PushOnline : MonoBehaviour {
 	}
 
 	public void Register() {
-		itemMap.Add ("name", 12);
-		itemMap.Add ("time", 3);
+		InputLogger();
+		itemMap.Add ("name", inputValue);
+		itemMap.Add ("time", StageManager.GetFinalScore());
 		map.Add (ToString () + "/" + key, itemMap);
 		//ここでpushしてる
 		timeRankDB.UpdateChildrenAsync (map);
 	}
 	public void InputLogger() {
- 
-        string inputValue = textField.text;
- 
+        inputValue = textField.text;
         Debug.Log(inputValue);
- 
         textField.text = "";
     }
 }
