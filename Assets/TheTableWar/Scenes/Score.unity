@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   applicationKey: c2defbbd157fd695f7cb2f6385f136b85597ce2c0ba2bd777fa1cffbed9c2819
   clientKey: a75d340f55f044b4570bae4729133aea171efa9035082eb7444d935c97d4e8f1
-  usePush: 0
+  usePush: 1
   useAnalytics: 0
   androidSenderId: 
   responseValidation: 0

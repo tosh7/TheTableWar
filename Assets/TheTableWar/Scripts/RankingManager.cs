@@ -14,7 +14,7 @@ public class RankingManager : MonoBehaviour {
 		timeRankDB = FirebaseDatabase.DefaultInstance.GetReference ("time ranks");
 
 		//bossNoのノードからtimeで昇順ソートして最大10件を取る（非同期)
-		timeRankDB.Child("EventSystem(PushOnline)").OrderByChild ("time").LimitToFirst (1).GetValueAsync ().ContinueWith (task => {
+		timeRankDB.Child ("EventSystem(PushOnline)").OrderByChild ("time").LimitToFirst (1).GetValueAsync ().ContinueWith (task => {
 			Debug.Log ("hey");
 			if (task.IsFaulted) { //取得失敗
 				//Handle the Error
@@ -22,17 +22,21 @@ public class RankingManager : MonoBehaviour {
 			} else if (task.IsCompleted) { //取得成功
 				Debug.Log ("success");
 				DataSnapshot snapshot = task.Result; //結果取得
-				Debug.Log(snapshot);
+				Debug.Log (snapshot);
+				// string jsonData = snapshot.GetRawJsonValue ();
+				// Debug.Log (jsonData);
+				// Debug.Log(snapshot);
 				IEnumerator<DataSnapshot> en = snapshot.Children.GetEnumerator (); //結果リストをenumeratorで処理
 				int rank = 0;
-				Debug.Log(en);
+				// Debug.Log(en);
 
-				while (en.MoveNext ()) { //１件ずつ処理
+				// while (en.MoveNext ()) { //１件ずつ処理
+				while(rank  < 113){
 					Debug.Log (1);
-					// DataSnapshot data = en.Current; //データ取る
+					DataSnapshot data = en.Current; //データ取る
 					Debug.Log (2);
-					string name = (string) snapshot.Child ("name").GetValue (true); //名前取る
-					string time = (string) snapshot.Child ("time").GetValue (true); //時間を取る
+					string name = (string) data.Child ("name").GetValue (true); //名前取る
+					string time = (string) data.Child ("time").GetValue (true); //時間を取る
 					Debug.Log (3);
 					//順位のuGUIに値を設定
 					// GameObject rankItem = rankList.transform.GetChild (rank).gameObject;
@@ -44,8 +48,6 @@ public class RankingManager : MonoBehaviour {
 			}
 		});
 	}
-
-	
 
 	// Update is called once per frame
 	void Update () {
