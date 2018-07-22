@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.iOS;
 using NCMB;
+using System;
 
 public class PushOnline : MonoBehaviour {
 
@@ -36,8 +37,20 @@ public class PushOnline : MonoBehaviour {
 		//まずはscoreClassに保存内容を入れて
 		scoreClass["name"] = 3;
 		scoreClass["score"] = 1;
-		//ここでpush
-		scoreClass.SaveAsync();
+
+		// ここでpush
+		// try{
+		// 	scoreClass.SaveAsync();
+		// }catch(NullReferenceException ex){
+		// 	Debug.Log(ex);
+		// }
+		// scoreClass.SaveAsync((NCMBException e) => {
+		// 	if(e != null){
+		// 		Debug.Log("Error" + e.ErrorCode);
+		// 	} else{
+		// 		Debug.Log("Scucess");
+		// 	}
+		// });
 	}
 
 	// Update is called once per frame

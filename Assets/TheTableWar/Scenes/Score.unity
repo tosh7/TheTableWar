@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   applicationKey: c2defbbd157fd695f7cb2f6385f136b85597ce2c0ba2bd777fa1cffbed9c2819
   clientKey: a75d340f55f044b4570bae4729133aea171efa9035082eb7444d935c97d4e8f1
-  usePush: 1
+  usePush: 0
   useAnalytics: 0
   androidSenderId: 
   responseValidation: 0
@@ -980,6 +980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537723749}
   - component: {fileID: 1537723750}
+  - component: {fileID: 1537723751}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -1009,6 +1010,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a0e1caff0adfd747bc68168599e26c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1537723751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537723748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7327520a97914488acfba59c02d5c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1658386877
