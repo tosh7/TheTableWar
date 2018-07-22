@@ -6,6 +6,7 @@ using Firebase.Unity.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.iOS;
+using NCMB;
 
 public class PushOnline : MonoBehaviour {
 
@@ -19,6 +20,7 @@ public class PushOnline : MonoBehaviour {
 	public GameObject inputField;
 	string inputValue;
 	FinalScore fs;
+	
 
 
 	// Use this for initialization
@@ -29,6 +31,13 @@ public class PushOnline : MonoBehaviour {
 		key = timeRankDB.Child (ToString ()).Push ().Key;
 		textField = inputField.GetComponent<InputField>();
 		// Debug.Log("final score is " + StageManager.GetFinalScore());
+		NCMBObject scoreClass = new NCMBObject("ScoreClass");
+		//これ以降にniftyCloudでの動作を書くよ
+		//まずはscoreClassに保存内容を入れて
+		scoreClass["name"] = 3;
+		scoreClass["score"] = 1;
+		//ここでpush
+		scoreClass.SaveAsync();
 	}
 
 	// Update is called once per frame
@@ -42,7 +51,15 @@ public class PushOnline : MonoBehaviour {
 		itemMap.Add ("time", StageManager.GetFinalScore());
 		map.Add (ToString () + "/" + key, itemMap);
 		//ここでpushしてる
-		timeRankDB.UpdateChildrenAsync (map);
+		// timeRankDB.UpdateChildrenAsync (map);
+
+		// NCMBObject scoreClass = new NCMBObject("ScoreClass");
+		// //これ以降にniftyCloudでの動作を書くよ
+		// //まずはscoreClassに保存内容を入れて
+		// scoreClass["name"] = 3;
+		// scoreClass["score"] = 1;
+		// //ここでpush
+		// scoreClass.SaveAsync();
 	}
 	public void InputLogger() {
         inputValue = textField.text;
