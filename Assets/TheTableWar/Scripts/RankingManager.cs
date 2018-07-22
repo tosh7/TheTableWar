@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
-using UnityEngine;
 
 public class RankingManager : MonoBehaviour {
 
@@ -11,41 +11,52 @@ public class RankingManager : MonoBehaviour {
 	private DatabaseReference timeRankDB;
 	void Start () {
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl ("https://thetablewar-14053.firebaseio.com/");
-		timeRankDB = FirebaseDatabase.DefaultInstance.GetReference ("time ranks");
-
+		timeRankDB = FirebaseDatabase.DefaultInstance.GetReference ("EventSystem(PushOnline)");
+		
+	// 	FirebaseDatabase.DefaultInstance
+    //     .GetReference("time").GetValueAsync().ContinueWith(task => {
+    //     if (task.IsFaulted) {
+    //       // Handle the error...
+    //     }
+    //     else if (task.IsCompleted) {
+    //       DataSnapshot snapshot = task.Result;
+    //       // Do something with snapshot...
+	// 	  Debug.Log(timeRankDB.Child(ToString()));
+    //     }
+    //   });
 		//bossNoのノードからtimeで昇順ソートして最大10件を取る（非同期)
-		timeRankDB.Child("EventSystem(PushOnline)").OrderByChild ("time").LimitToFirst (1).GetValueAsync ().ContinueWith (task => {
-			Debug.Log ("hey");
+		timeRankDB.Child(ToString()).OrderByChild ("time").LimitToFirst (10).GetValueAsync ().ContinueWith (task => {
+			Debug.Log("hey");
 			if (task.IsFaulted) { //取得失敗
 				//Handle the Error
-				Debug.Log ("error");
+				Debug.Log("error");
 			} else if (task.IsCompleted) { //取得成功
-				Debug.Log ("success");
+				Debug.Log("hello");
 				DataSnapshot snapshot = task.Result; //結果取得
-				Debug.Log(snapshot);
+				Debug.Log(1);
 				IEnumerator<DataSnapshot> en = snapshot.Children.GetEnumerator (); //結果リストをenumeratorで処理
+				// Debug.Log(en.Current.Child("name").GetValue(true));
 				int rank = 0;
-				Debug.Log(en);
-
-				while (en.MoveNext ()) { //１件ずつ処理
-					Debug.Log (1);
+				Debug.Log(3);
+				
+				while (rank < 10) { //１件ずつ処理
 					// DataSnapshot data = en.Current; //データ取る
-					Debug.Log (2);
 					string name = (string) snapshot.Child ("name").GetValue (true); //名前取る
 					string time = (string) snapshot.Child ("time").GetValue (true); //時間を取る
-					Debug.Log (3);
 					//順位のuGUIに値を設定
 					// GameObject rankItem = rankList.transform.GetChild (rank).gameObject;
 					// TimeRank timeRank = rankItem.GetComponent<TimeRank> ();
 					// timeRank.SetText (rank + 1, name, getTimeStr (time)); //順位1位から
 					rank++;
-					Debug.Log (time);
+					Debug.Log(name);
+					
 				}
+				
+			} else {
+				Debug.Log("helloooo");
 			}
 		});
 	}
-
-	
 
 	// Update is called once per frame
 	void Update () {
