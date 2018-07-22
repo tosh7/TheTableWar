@@ -14,19 +14,20 @@ public class RankingManager : MonoBehaviour {
 		timeRankDB = FirebaseDatabase.DefaultInstance.GetReference ("time ranks");
 
 		//bossNoのノードからtimeで昇順ソートして最大10件を取る（非同期)
-		timeRankDB.Child("-LHvsVG0sasa_0YOsCZh".ToString ()).OrderByChild ("time").LimitToFirst (1).GetValueAsync ().ContinueWith (task => {
+		timeRankDB.Child("EventSystem(PushOnline)").OrderByChild ("time").LimitToFirst (1).GetValueAsync ().ContinueWith (task => {
 			Debug.Log ("hey");
 			if (task.IsFaulted) { //取得失敗
 				//Handle the Error
 				Debug.Log ("error");
 			} else if (task.IsCompleted) { //取得成功
-				Debug.Log ("hello");
+				Debug.Log ("success");
 				DataSnapshot snapshot = task.Result; //結果取得
 				Debug.Log(snapshot);
-				// IEnumerator<DataSnapshot> en = snapshot.Children.GetEnumerator (); //結果リストをenumeratorで処理
+				IEnumerator<DataSnapshot> en = snapshot.Children.GetEnumerator (); //結果リストをenumeratorで処理
 				int rank = 0;
+				Debug.Log(en);
 
-				// while (en.MoveNext ()) { //１件ずつ処理
+				while (en.MoveNext ()) { //１件ずつ処理
 					Debug.Log (1);
 					// DataSnapshot data = en.Current; //データ取る
 					Debug.Log (2);
@@ -39,10 +40,12 @@ public class RankingManager : MonoBehaviour {
 					// timeRank.SetText (rank + 1, name, getTimeStr (time)); //順位1位から
 					rank++;
 					Debug.Log (time);
-				// }
+				}
 			}
 		});
 	}
+
+	
 
 	// Update is called once per frame
 	void Update () {
