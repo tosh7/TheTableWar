@@ -28,9 +28,10 @@ namespace UnityEngine.XR.iOS {
 
         public int num = 0;
         public GameObject bomb;
+        float a, b, c;
+        int counter = 0;
 
-
-        public void Start(){
+        public void Start () {
             timer = seconds + 1.5f;
         }
         //指定した場所にオブジェクトを生成
@@ -41,8 +42,12 @@ namespace UnityEngine.XR.iOS {
         }
 
         void Update () {
-            if (num != 0) Game ();
-           // Game();
+            if (num != 0) {
+                Game ();
+                if (counter % 150 == 0 ) EnemyCreater ();
+                counter++;
+            }
+            // Game();
 
             if (Input.touchCount > 0 && m_HitTransform != null) {
                 var touch = Input.GetTouch (0);
@@ -61,14 +66,17 @@ namespace UnityEngine.XR.iOS {
 
                             if (num == 0) {
                                 CreateObj (new Vector3 (position.x, position.y, position.z), ruinedHouse);
+                                a = position.x;
+                                b = position.y + 0.071394f;
+                                c = position.z;
                                 CreateObj (new Vector3 (position.x, position.y + 0.071394f, position.z), monsterA);
-                                CreateObj (new Vector3 (position.x-0.23f, position.y + 0.071394f, position.z+0.23f), monsterA);
-                                CreateObj (new Vector3 (position.x+0.14f, position.y + 0.071394f, position.z-0.2026f), monsterA);
-                                CreateObj (new Vector3 (position.x+0.226f, position.y + 0.071394f, position.z-0.424f), monsterA);
-                                CreateObj (new Vector3 (position.x-0.21f, position.y + 0.071394f, position.z-0.404f), monsterA);
-                                CreateObj (new Vector3 (position.x-0.1f, position.y + 0.071394f, position.z-0.155f), monsterA);
-                                CreateObj (new Vector3 (position.x+0.165f, position.y + 0.0504f, position.z-0.59f), monsterA);
-                                CreateObj (new Vector3 (position.x+0/14f, position.y + 0.071394f, position.z+0.44f), monsterA);
+                                CreateObj (new Vector3 (position.x - 0.23f, position.y + 0.071394f, position.z + 0.23f), monsterA);
+                                // CreateObj (new Vector3 (position.x+0.14f, position.y + 0.071394f, position.z-0.2026f), monsterA);
+                                // CreateObj (new Vector3 (position.x+0.226f, position.y + 0.071394f, position.z-0.424f), monsterA);
+                                // CreateObj (new Vector3 (position.x-0.21f, position.y + 0.071394f, position.z-0.404f), monsterA);
+                                // CreateObj (new Vector3 (position.x-0.1f, position.y + 0.071394f, position.z-0.155f), monsterA);
+                                CreateObj (new Vector3 (position.x + 0.165f, position.y + 0.0504f, position.z - 0.59f), monsterA);
+                                CreateObj (new Vector3 (position.x + 0.14f, position.y + 0.071394f, position.z + 0.44f), monsterA);
                                 num++;
                             }
                             break;
@@ -85,13 +93,11 @@ namespace UnityEngine.XR.iOS {
                 hitCount++;
                 combo++;
                 AddPoint (point, combo);
-                if(bomb){
-                    Instantiate(bomb, enemy.transform.position, enemy.transform.rotation);
+                if (bomb) {
+                    Instantiate (bomb, enemy.transform.position, enemy.transform.rotation);
                 }
                 Destroy (enemy);
-            }
-            else
-            {
+            } else {
                 combo = 0;
             }
         }
@@ -102,19 +108,16 @@ namespace UnityEngine.XR.iOS {
             if (timer > 0.0f && timer <= seconds) {
                 messageText.text = "";
                 timerText.text = timer.ToString ("F1");
-                if (combo >= 2)
-                {
-                    comboMessage = combo.ToString() + " combo";
+                if (combo >= 2) {
+                    comboMessage = combo.ToString () + " combo";
                     comboText.text = comboMessage;
-                }
-                else
-                {
+                } else {
                     comboText.text = "";
                 }
                 accuracy = hitCount * 100 / playerScript.shotCount;
                 //accuracyMessage = (accuracy * 100.0).ToString ("F2") + " %";
                 //if (accuracy <= 1.0f) accuracyText.text = accuracyMessage;
-                accuracyText.text = accuracy.ToString("F2") + " %";
+                accuracyText.text = accuracy.ToString ("F2") + " %";
                 finalScore = CalcFinalScore (score, accuracy);
             }
             if (timer > -1.5f && timer <= 0.0f) messageText.text = "FINISH!";
@@ -136,6 +139,41 @@ namespace UnityEngine.XR.iOS {
         // Scoreシーンで使用
         public static int GetFinalScore () {
             return finalScore;
+        }
+
+        void EnemyCreater () {
+            Debug.Log("make it");
+            // int randomNum = Random.Range (0, 7);
+            int randomNum = 0;
+            switch (randomNum) {
+                case 0:
+                Debug.Log("should be here");
+                    CreateObj (new Vector3 (a, b, c), monsterA);
+                    break;
+                case 1:
+                    CreateObj (new Vector3 (a - 0.23f, b, c + 0.23f), monsterA);
+                    break;
+                case 2:
+                    CreateObj (new Vector3 (a + 0.14f, b, c - 0.2026f), monsterA);
+                    break;
+                case 3:
+                    CreateObj (new Vector3 (a + 0.226f, b, c - 0.424f), monsterA);
+                    break;
+                case 4:
+
+                    CreateObj (new Vector3 (a - 0.21f, b, c - 0.404f), monsterA);
+                    break;
+                case 5:
+                    CreateObj (new Vector3 (a - 0.1f, b, c - 0.155f), monsterA);
+                    break;
+                case 6:
+                    CreateObj (new Vector3 (a + 0.165f, b, c - 0.59f), monsterA);
+                    break;
+                case 7:
+                    CreateObj (new Vector3 (a + 0.14f, b, c + 0.44f), monsterA);
+                    break;
+            }
+
         }
     }
 }
