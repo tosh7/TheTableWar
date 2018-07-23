@@ -60,11 +60,15 @@ namespace UnityEngine.XR.iOS {
                             Vector3 position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
 
                             if (num == 0) {
-                                CreateObj (new Vector3 (position.x, position.y, position.z + 0.1f), ruinedHouse);
-                                CreateObj (new Vector3 (position.x, position.y, position.z), monsterA);
-                                CreateObj (new Vector3 (position.x + 0.3f, position.y, position.z), monsterA);
-                                CreateObj (new Vector3 (position.x + 0.1f, position.y, position.z + 0.8f), monsterA);
-                                CreateObj (new Vector3 (position.x, position.y + 0.2f, position.z), monsterA);
+                                CreateObj (new Vector3 (position.x, position.y, position.z), ruinedHouse);
+                                CreateObj (new Vector3 (position.x, position.y + 0.071394f, position.z), monsterA);
+                                CreateObj (new Vector3 (position.x-0.23f, position.y + 0.071394f, position.z+0.23f), monsterA);
+                                CreateObj (new Vector3 (position.x+0.14f, position.y + 0.071394f, position.z-0.2026f), monsterA);
+                                CreateObj (new Vector3 (position.x+0.226f, position.y + 0.071394f, position.z-0.424f), monsterA);
+                                CreateObj (new Vector3 (position.x-0.21f, position.y + 0.071394f, position.z-0.404f), monsterA);
+                                CreateObj (new Vector3 (position.x-0.1f, position.y + 0.071394f, position.z-0.155f), monsterA);
+                                CreateObj (new Vector3 (position.x+0.165f, position.y + 0.0504f, position.z-0.59f), monsterA);
+                                CreateObj (new Vector3 (position.x+0/14f, position.y + 0.071394f, position.z+0.44f), monsterA);
                                 num++;
                             }
                             break;
