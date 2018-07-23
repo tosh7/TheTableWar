@@ -47,11 +47,19 @@ public class RankingManager : MonoBehaviour {
 							Debug.LogError ("Bad data in sample.  Did you forget to call SetEditorDatabaseUrl with your project id?");
 							break;
 						} else {
+							//for文などとは違い一回しか呼ばれていない
 							Debug.Log ("Leaders entry : " +
 								childSnapshot.Child ("email").Value.ToString () + " - " +
 								childSnapshot.Child ("score").Value.ToString ());
 							leaderBoard.Insert (1, childSnapshot.Child ("score").Value.ToString () +
 								"  " + childSnapshot.Child ("email").Value.ToString ());
+
+							// for (int i = 0; i < nameLabelArray.Length; i++) {
+							// 	// nameLabelArray[i].text = childSnapshot.Child ("email").Value.ToString ();
+							// 	// scoreLabelArray[i].text = childSnapshot.Child ("score").Value.ToString ();
+							// 	var arr = leaderBoard.ToArray();
+							// 	Debug.Log(arr[i]);
+							// }
 						}
 					}
 				}
