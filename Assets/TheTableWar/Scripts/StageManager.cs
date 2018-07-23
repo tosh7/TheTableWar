@@ -44,7 +44,7 @@ namespace UnityEngine.XR.iOS {
         void Update () {
             if (num != 0) {
                 Game ();
-                if (counter % 150 == 0 ) EnemyCreater ();
+                if (counter % 250 == 0 ) EnemyCreater ();
                 counter++;
             }
             // Game();
@@ -143,11 +143,11 @@ namespace UnityEngine.XR.iOS {
 
         void EnemyCreater () {
             Debug.Log("make it");
-            // int randomNum = Random.Range (0, 7);
-            int randomNum = 0;
+            int randomNum = Random.Range (0, 7);
+            // int randomNum = 0;
             switch (randomNum) {
                 case 0:
-                Debug.Log("should be here");
+                    Debug.Log("should be here");
                     CreateObj (new Vector3 (a, b, c), monsterA);
                     break;
                 case 1:
