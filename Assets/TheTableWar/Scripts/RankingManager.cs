@@ -48,19 +48,25 @@ public class RankingManager : MonoBehaviour {
 							break;
 						} else {
 							//for文などとは違い一回しか呼ばれていない
-							Debug.Log ("Leaders entry : " +
-								childSnapshot.Child ("email").Value.ToString () + " - " +
-								childSnapshot.Child ("score").Value.ToString ());
+							// Debug.Log ("Leaders entry : " +
+							// 	childSnapshot.Child ("email").Value.ToString () + " - " +
+							// 	childSnapshot.Child ("score").Value.ToString ());
+
 							leaderBoard.Insert (1, childSnapshot.Child ("score").Value.ToString () +
 								"  " + childSnapshot.Child ("email").Value.ToString ());
+							var array = leaderBoard.ToArray ();
+							Debug.Log ("配列の長さは" + array.Length);
+							for (int i = 0; i < array.Length; i++) {
+								Debug.Log (i + "番目は" + array[i]);
+							}
 
-							// for (int i = 0; i < nameLabelArray.Length; i++) {
-							// 	// nameLabelArray[i].text = childSnapshot.Child ("email").Value.ToString ();
-							// 	// scoreLabelArray[i].text = childSnapshot.Child ("score").Value.ToString ();
-							// 	var arr = leaderBoard.ToArray();
-							// 	Debug.Log(arr[i]);
-							// }
+							if(array.Length == 6){
+								for(int i = 0; i < 6; i++) {
+									nameLabelArray[i].text = array[i+1].ToString();
+								}
+							}
 						}
+
 					}
 				}
 			};
