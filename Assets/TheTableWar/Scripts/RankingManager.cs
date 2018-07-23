@@ -4,6 +4,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RankingManager : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class RankingManager : MonoBehaviour {
 	private DatabaseReference timeRankDB;
 	ArrayList leaderBoard = new ArrayList ();
 	public const int MaxScores = 5;
+	public Text[] nameLabelArray = new Text[5];
+	public Text[] scoreLabelArray = new Text[5];
 	void Start () {
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl ("https://thetablewar-14053.firebaseio.com/");
 		timeRankDB = FirebaseDatabase.DefaultInstance.GetReference ("time ranks");

@@ -39,11 +39,11 @@ public class PushOnline : MonoBehaviour {
 
 	public void Register() {
 		InputLogger();
-		itemMap.Add ("name", inputValue);
-		itemMap.Add ("time", StageManager.GetFinalScore());
-		map.Add (ToString () + "/" + key, itemMap);
-		//ここでpushしてる
-		timeRankDB.UpdateChildrenAsync (map);
+		// itemMap.Add ("name", inputValue);
+		// itemMap.Add ("time", StageManager.GetFinalScore());
+		// map.Add (ToString () + "/" + key, itemMap);
+		// //ここでpushしてる
+		// timeRankDB.UpdateChildrenAsync (map);
 		RegisterAgain();
 	}
 	public void InputLogger() {
