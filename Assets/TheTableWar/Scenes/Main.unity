@@ -1692,8 +1692,9 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
-  ruinedHouse: {fileID: 170474, guid: 770a7a5a93eb9f24cbb20fc429fe10af, type: 2}
-  monsterA: {fileID: 1237513207122726, guid: df39cffcf27df4da093e03f6a17d7fe4, type: 2}
+  ruinedHouse: {fileID: 1076901163885612, guid: 82de7b36dc9914d889d2f16a09e387ea,
+    type: 2}
+  monsterA: {fileID: 1232045276378716, guid: ac69d74fbe47c4f0b851254db228b2e4, type: 2}
   playerScript: {fileID: 229804522}
   timerText: {fileID: 1908271330}
   scoreText: {fileID: 230305292}

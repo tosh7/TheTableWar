@@ -60,7 +60,7 @@ namespace UnityEngine.XR.iOS {
                             Vector3 position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
 
                             if (num == 0) {
-                                CreateObj (new Vector3 (position.x, position.y, position.z), ruinedHouse);
+                                CreateObj (new Vector3 (position.x, position.y + 0.05f, position.z), ruinedHouse);
                                 CreateObj (new Vector3 (position.x, position.y, position.z), monsterA);
                                 CreateObj (new Vector3 (position.x + 0.3f, position.y, position.z), monsterA);
                                 CreateObj (new Vector3 (position.x + 0.1f, position.y, position.z + 0.8f), monsterA);
