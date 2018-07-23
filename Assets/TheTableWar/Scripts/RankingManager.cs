@@ -60,9 +60,11 @@ public class RankingManager : MonoBehaviour {
 								Debug.Log (i + "番目は" + array[i]);
 							}
 
-							if(array.Length == 6){
-								for(int i = 0; i < 6; i++) {
-									nameLabelArray[i].text = array[i+1].ToString();
+							if (array.Length == 6) {
+								for (int i = 0; i < 6; i++) {
+
+									nameLabelArray[i].text = returnString (array[i + 1].ToString (), 0);
+									scoreLabelArray[i].text = returnString(array[i+1].ToString(), 1);
 								}
 							}
 						}
@@ -71,8 +73,28 @@ public class RankingManager : MonoBehaviour {
 				}
 			};
 	}
-	// Update is called once per frame
-	void Update () {
 
+	string returnString (string str, int num) {
+		string reStr;
+		char[] charArray = str.ToCharArray ();
+		char[] newCharArray　 = new char[10];
+		int j = 0;
+
+		for (int i = 0; i < charArray.Length; i++) {
+			if (num == 0) {
+				if (!char.IsNumber (charArray[i])) {
+					newCharArray[j] = charArray[i];
+					j++;
+				}
+			} else if (num == 1) {
+				if (char.IsNumber (charArray[i])) {
+					newCharArray[j] = charArray[i];
+					j++;
+				}
+			}
+		}
+		reStr = new string (newCharArray);
+
+		return reStr;
 	}
 }
