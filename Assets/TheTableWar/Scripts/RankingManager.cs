@@ -10,7 +10,7 @@ public class RankingManager : MonoBehaviour {
 	// Use this for initialization
 	private DatabaseReference timeRankDB;
 	ArrayList leaderBoard = new ArrayList ();
-	private const int MaxScores = 5;
+	public const int MaxScores = 5;
 	void Start () {
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl ("https://thetablewar-14053.firebaseio.com/");
 		timeRankDB = FirebaseDatabase.DefaultInstance.GetReference ("time ranks");
