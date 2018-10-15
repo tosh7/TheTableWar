@@ -117,7 +117,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0
+  bundleVersion: 1.0.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -156,7 +156,7 @@ PlayerSettings:
     iOS: com.tosh07.thetablewar
     tvOS: com.Company.ProductName
   buildNumber:
-    iOS: 0
+    iOS: 1.0.1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
@@ -462,7 +462,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: "\u30AB\u30E1\u30E9\u3078\u306E\u30A2\u30AF\u30BB\u30B9\u3092\u8A31\u53EF\u3057\u307E\u3059"
+  cameraUsageDescription: "\u3053\u306E\u30A2\u30D7\u30EA\u306F\u3001\u30AB\u30E1\u30E9\u3092\u4F7F\u7528\u3059\u308BAR\u30B2\u30FC\u30E0\u3067\u3059"
   locationUsageDescription: 
   microphoneUsageDescription: 
   switchNetLibKey: 
