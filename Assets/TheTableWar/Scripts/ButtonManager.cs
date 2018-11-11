@@ -13,4 +13,8 @@ public class ButtonManager : MonoBehaviour {
         SceneManager.LoadScene ("Ranking");
         // SceneManager.UnloadSceneAsync("score");
     }
+
+    public void PrivacyBUtton() {
+        SceneManager.LoadScene("PrivacyPolicy");
+    }
 }

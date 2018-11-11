@@ -156,7 +156,7 @@ PlayerSettings:
     iOS: com.tosh07.thetablewar
     tvOS: com.Company.ProductName
   buildNumber:
-    iOS: 1.0.1
+    iOS: 1.0.2
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0

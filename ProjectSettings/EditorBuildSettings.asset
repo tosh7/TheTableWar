@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TheTableWar/Scenes/Ranking.unity
     guid: c9b8a81c084f61244bfc34b6aacea686
+  - enabled: 1
+    path: Assets/TheTableWar/Scenes/PrivacyPolicy.unity
+    guid: d3a490701341d41b08bebeacdf2d3227
   m_configObjects: {}
